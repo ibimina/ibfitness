@@ -1,0 +1,125 @@
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2em;
+}
+nav {
+  transform: translateY(0%);
+  position: fixed;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  transition: transform 500ms ease-in-out;
+}
+nav[data-visible="true"] {
+  transform: translateY(100%);
+  transition: transform 500ms ease-out;
+}
+ul {
+  background-color: hsl(0, 0%, 79%);
+  height: 100%;
+  width: 70%;
+  padding: 7em 1em 1em 1em;
+}
+.mobile-navigation {
+  z-index: 50;
+  background-image: url("../../../public/assets/icon-hamburger.svg");
+}
+.mobile-navigation[aria-expanded="true"] {
+  background-image: url("../../../public/assets/icon-close.svg");
+}
+.nav-list {
+  margin-bottom: 2em;
+}
+.landing-flex{
+margin-top: 3em;
+min-height: 80vh;
+}
+.landing-img {
+  margin-bottom: 2em;
+  max-width: 500px;
+  margin-inline: auto;
+}
+.slogan {
+  text-align: start;
+}
+.slogan-container {
+  margin-bottom: 2em;
+}
+.login-pg{
+    min-height: 75vh
+}
+.hello{
+    text-align: center;
+}
+.wlc{
+display: block;
+text-transform: capitalize;
+font-weight: 600;
+}
+form{
+    /* background-color: white; */
+    padding: 2em;
+    border-radius: 10px;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+}
+label{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1em;
+}
+input{
+    border: 0;
+    padding: 1em ;
+    border-radius: 10px;
+}
+.submit{
+    width: 100%;
+    margin-top: 7em;
+    cursor: pointer;
+}
+span{
+    margin-bottom: .5em;
+}
+@media (min-width: 60rem) {
+  .mobile-navigation {
+    display: none;
+  }
+  nav {
+    position: relative;
+    top: auto;
+    left: 0;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    transition: transform 500ms ease-in-out;
+  }
+  ul {
+    background-color: transparent;
+    height: auto;
+    width: auto;
+    padding: 0;
+    display: flex;
+    gap: 3em;
+  }
+  .nav-list {
+    margin-bottom: 0;
+  }
+  .landing-flex {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .slogan {
+    text-align: left;
+  }
+  .landing-img {
+    margin-inline: auto;
+  }
+}
