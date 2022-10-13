@@ -1,0 +1,20 @@
+.center {
+  text-align: center;
+}
+select {
+  width: 100%;
+  padding: 1em;
+  border: 0;
+  border-radius: 10px;
+}
+.bold {
+  font-weight: 900;
+}
+@media (min-width: 60rem) {
+  .flex {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    min-height: 90vh;
+  }
+}
