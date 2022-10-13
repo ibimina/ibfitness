@@ -23,13 +23,12 @@ export const AuthContextProvider = ({ children }) => {
     authChanged: false,
   });
  useEffect(()=>{
-const unsub =onAuthStateChanged(auth, (user) => {
-dispatch({type:"AUTHREADY",payload:user})
+const unsub =onAuthStateChanged(auth, user=> {
+dispatch({type:"AUTHREADY", payload:user})
 unsub()
 });
 
-
- },[])
+ },[ ])
 
   return (
     <AuthContext.Provider value={{ ...state, dispatch }}>
