@@ -1,56 +1,23 @@
+import { useState } from "react";
+import { useSignup } from "../../hooks/useSignup";
+
 import { Footer } from "../../components/Footer";
 import { NavBar } from "../../components/NavBar";
 
-import { auth } from "../../firebase/config";
-import { createUserWithEmailAndPassword, updateProfile } from "firebase/auth";
-import useAuthContext from "../../hooks/useAuthContext";
-import { useEffect, useState } from "react";
-
-
 export default function Signup() {
-  const [registerUser, setRegisterUser] = useState(false);
-  const [registerError, setRegisterError] = useState(null);
-  const[cancel,setCancel]=useState(false)
-  const { dispatch} = useAuthContext();
+  const [displayName, setDisplayName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const { signup, registerError, registerUser } = useSignup();
 
-  const handleSubmit = async (e) => {
-     e.preventDefault();
-       setRegisterUser(true);
-       setRegisterError(null);
-    try {
-      const userCredential = await createUserWithEmailAndPassword(
-        auth,
-        e.target.email.value,
-        e.target.password.value
-      );
-      if (!userCredential) {
-        throw new Error ("could not catch error")
-      }
-     await  updateProfile(userCredential.user, {
-        displayName: e.target.username.value,
-      });
-      dispatch({ type: "LOGIN", payload: userCredential.user });
-        setRegisterUser(false);
-        setRegisterError(null);
-        e.target.reset();
-      if (!cancel) {
-   setRegisterUser(false);
-   setRegisterError(null);
-    e.target.reset();
- }
-
-      
-    } catch (error) {
-      if (!cancel) {
-        setRegisterUser(false);
-        setRegisterError(error.message);
-      }
-      
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    signup(email, password, displayName);
+    setDisplayName("");
+    setEmail("");
+    setPassword("");
   };
-useEffect(()=>{
-return()=>setCancel(true)
-},[])
+
   return (
     <>
       <NavBar />
@@ -61,14 +28,19 @@ return()=>setCancel(true)
         <form onSubmit={handleSubmit}>
           <label>
             <span>Enter Email</span>
-            <input type="email" placeholder="Email" name="email" required />
+            <input
+              type="email"
+              placeholder="Email"
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
           </label>
           <label>
             <span>Enter Username</span>
             <input
               type="text"
               placeholder="Username"
-              name="username"
+              onChange={(e) => setDisplayName(e.target.value)}
               required
             />
           </label>
@@ -77,7 +49,7 @@ return()=>setCancel(true)
             <input
               type="password"
               placeholder="Password"
-              name="password"
+              onChange={(e) => setPassword(e.target.value)}
               required
             />
           </label>
@@ -89,7 +61,6 @@ return()=>setCancel(true)
           )}
           {registerError && <>{registerError}</>}
         </form>
-     
       </div>
 
       <Footer />
