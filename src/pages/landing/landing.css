@@ -34,9 +34,9 @@ ul {
 .nav-list {
   margin-bottom: 2em;
 }
-.landing-flex{
-margin-top: 3em;
-min-height: 80vh;
+.landing-flex {
+  margin-top: 3em;
+  min-height: 80vh;
 }
 .landing-img {
   margin-bottom: 2em;
@@ -49,42 +49,42 @@ min-height: 80vh;
 .slogan-container {
   margin-bottom: 2em;
 }
-.login-pg{
-    min-height: 75vh
+.login-pg {
+  min-height: 75vh;
 }
-.hello{
-    text-align: center;
+.hello {
+  text-align: center;
 }
-.wlc{
-display: block;
-text-transform: capitalize;
-font-weight: 600;
+.wlc {
+  display: block;
+  text-transform: capitalize;
+  font-weight: 600;
 }
-form{
-    /* background-color: white; */
-    padding: 2em;
-    border-radius: 10px;
-    max-width: 500px;
-    width: 100%;
-    margin: auto;
+form {
+  /* background-color: white; */
+  padding: 2em;
+  border-radius: 10px;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
 }
-label{
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1em;
+label {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1em;
 }
-input{
-    border: 0;
-    padding: 1em ;
-    border-radius: 10px;
+input {
+  border: 0;
+  padding: 1em;
+  border-radius: 10px;
 }
-.submit{
-    width: 100%;
-    margin-top: 4em;
-    cursor: pointer;
+.submit {
+  width: 100%;
+  margin-top: 4em;
+  cursor: pointer;
 }
-span{
-    margin-bottom: .5em;
+span {
+  margin-bottom: 0.5em;
 }
 @media (min-width: 60rem) {
   .mobile-navigation {
@@ -121,6 +121,6 @@ span{
   }
   .landing-img {
     margin-inline: auto;
-    margin-bottom:0;
+    margin-bottom: 0;
   }
 }
