@@ -8,6 +8,7 @@ import Login from "./pages/landing/Login";
 import Signup from "./pages/landing/Signup";
 import Registration from "./pages/registration/Registration";
 
+
 function App() {
   const {user,authChanged}=useAuthContext()
   return (
@@ -17,12 +18,20 @@ function App() {
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route
+
               path="/ibfitness"
               element={user ? <Home /> : <Navigate to="/login" />}
             />
             <Route
               path="/registration"
-              element={user ? <Registration /> : <Navigate to="/signup" />}
+              element={user ? <Registration /> : <Navigate to="/signup" />
+              path="/home"
+              element={user ? <Home /> : <Navigate to="/login" />}
+            />
+            <Route
+              path="/registerpageone"
+              element={user ? <RegisterPageTwo /> : <Navigate to="/signup" />}
+
             />
             <Route
               path="/login"
@@ -31,6 +40,9 @@ function App() {
             <Route
               path="/signup"
               element={user ? <Navigate to="/registration" /> : <Signup />}
+
+              element={user ? <Navigate to="/registerpageone" /> : <Signup />}
+              
             />
           </Routes>
         </BrowserRouter>
