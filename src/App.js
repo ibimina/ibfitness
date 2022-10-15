@@ -18,31 +18,21 @@ function App() {
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route
-
               path="/ibfitness"
               element={user ? <Home /> : <Navigate to="/login" />}
             />
             <Route
               path="/registration"
-              element={user ? <Registration /> : <Navigate to="/signup" />
-              path="/home"
-              element={user ? <Home /> : <Navigate to="/login" />}
+              element={user ? <Registration /> : <Navigate to="/signup" />}
             />
-            <Route
-              path="/registerpageone"
-              element={user ? <RegisterPageTwo /> : <Navigate to="/signup" />}
-
-            />
+          
             <Route
               path="/login"
-              element={user ? <Navigate to="/home" /> : <Login />}
+              element={user ? <Navigate to="/ibfitness" /> : <Login />}
             />
             <Route
               path="/signup"
-              element={user ? <Navigate to="/registration" /> : <Signup />}
-
-              element={user ? <Navigate to="/registerpageone" /> : <Signup />}
-              
+              element={user ? <Navigate to="/registration" /> : <Signup />}  
             />
           </Routes>
         </BrowserRouter>
