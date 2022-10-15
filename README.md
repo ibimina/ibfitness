@@ -1,6 +1,6 @@
-# Ibfitnness
+# Ibfitness
 
-"Ibfitnness" is a web app for tracking one's health. It is a Single Page Application (SPA) that allows users track body weight, meal intake, water intake.
+"Ibfitness" is a web app for tracking one's health. It is a Single Page Application (SPA) that allows users track body weight, meal intake, water intake.
 
 Our goal here is to Build a single page web application using the React library 
 ![]()
