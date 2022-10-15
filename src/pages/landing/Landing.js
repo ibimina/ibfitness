@@ -1,9 +1,7 @@
-
-import "./landing.css"
+import "./landing.css";
 
 import { NavBar } from "../../components/NavBar";
 import { Footer } from "../../components/Footer";
-
 
 export const Landing = () => {
   return (
@@ -15,8 +13,8 @@ export const Landing = () => {
 
           <p className="slogan">
             Get a fit and healthy body at the comfort of your home. Achieve your
-            goals, whether that's access to calories counter or activity tracking
-            apps.
+            goals, whether that's access to calories counter or activity
+            tracking apps.
           </p>
         </div>
         <div>
@@ -27,7 +25,7 @@ export const Landing = () => {
           />
         </div>
       </div>
-      <Footer/>
+      <Footer />
     </>
   );
 };
