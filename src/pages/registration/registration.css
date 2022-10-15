@@ -10,6 +10,13 @@ select {
 .bold {
   font-weight: 900;
 }
+.unit {
+  display: flex;
+  gap: 0.5em;
+}
+.cursor {
+  cursor: pointer;
+}
 @media (min-width: 60rem) {
   .flex {
     display: grid;
